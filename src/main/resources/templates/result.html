@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Webflix</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <a th:href="@{/search}"><button>back to search</button></a>
+    <h1 th:inline="text">Results</h1>
+    <label th:if="${movies.length} <= 0" style="color: red;">No results found.</label>
+    <ul th:if="${movies.length} > 0">
+        <li th:each="movie: ${movies}"><a th:href="@{'/movieDetails?id=' + ${movie.id}}" th:text="${movie.title} + ' (' + ${movie.releaseYear} + ')'"></a></li>
+    </ul>
+</body>
+</html>

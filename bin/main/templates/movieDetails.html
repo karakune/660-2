@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Webflix</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <a th:href="@{/result}"><button>back to results</button></a>
+    <a th:href="@{/rentConfirmed}"><button type="button">rent this movie</button></a>
+    <!--<label style="color: red;">Cannot rent movie, no copies available</label>-->
+    <!--<label style="color: red;">Cannot rent movie, too many rented</label>-->
+    <h1><p th:text="${movie.title}"></p></h1>
+    <label th:text="'Year: ' + ${movie.releaseYear}"></label><br/>
+    <div>
+        <label>Countries:</label>
+        <ul><li th:each="country: ${movie.productionCountries}" th:text="${country}"></li></ul>
+    </div>
+    <label th:text="'Original language: ' + ${movie.originalLanguage}"></label><br/>
+    <label th:text="'Length: ' + ${movie.length}"></label><br/>
+    <div>
+        <label>Genres:</label>
+        <ul>
+            <li th:each="genre: ${movie.genres}" th:text="${genre}"></li>
+        </ul>
+    </div>
+    <label>Director: <a th:href="@{'/personDetails?idMovie=' + ${movie.id} + $'&idPerson=' + ${movie.director.id}}" th:text="${movie.director.firstName} + ' ' + ${movie.director.lastName}"></a></label><br/>
+    <div>
+        <label>Actors:</label>
+        <ul>
+            <li th:each="actor: ${movie.actors}">
+                <a th:href="@{'/personDetails?idMovie=' + ${movie.id} + '&idPerson=' + ${actor.id}}" th:text="${actor.firstName} + ' ' + ${actor.lastName} + ' as ' + ${actor.character}"></a>
+            </li>
+        </ul>
+    </div>
+    <label th:text="'Summary: ' + ${movie.summary}"></label><br/>
+    <label>Poster: <a th:href="${movie.posterLink}" th:text="${movie.posterLink}"></a></label><br/>
+    <div>
+        <label>Trailers:</label>
+        <ul><li th:each="trailer: ${movie.trailerLinks}"><a th:href="${trailer}" th:text="${trailer}"></a></li></ul>
+    </div>
+</body>

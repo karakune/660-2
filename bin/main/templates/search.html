@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Webflix</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+    <h1 th:inline="text">Find movies</h1>
+    <form th:action="@{/result}"><!-- method="post"-->
+        <div><label> Title : <input type="text" name="title"/> </label></div>
+        <div><label> Year from : <input type="number" name="yearfrom"/> </label></div>
+        <div><label> Year to : <input type="number" name="yearto"/> </label></div>
+        <div><label> Country : <input type="text" name="country"/> </label></div>
+        <div><label> Original language : <input type="text" name="language"/> </label></div>
+        <div><label> Genre : <input type="text" name="genre"/> </label></div>
+        <div><label> Director name : <input type="text" name="director"/> </label></div>
+        <div><label> Actor name : <input type="text" name="actor"/> </label></div>
+        <div><input type="submit" value="Search"/></div>
+    </form>
+</body>
+</html>

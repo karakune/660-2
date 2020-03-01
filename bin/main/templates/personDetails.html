@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Webflix</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <a th:href="@{'/movieDetails?id=' + ${idMovie}}"><button>back to movie</button></a>
+    <h1><p th:text="${person.firstName} + ' ' + ${person.lastName}" /></h1>
+    <label th:text="'Birthday: ' + ${person.birthDate.toString()}"></label><br/>
+    <label th:text="'Country of origin: ' + ${person.birthplace}"></label><br/>
+    <label th:text="'Bio: ' + ${person.bio}"></label><br/>
+    <label th:text="'Photo: ' + ${person.photo}"></label><br/>
+</body>

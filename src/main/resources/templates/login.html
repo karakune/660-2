@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Webflix </title>
+    </head>
+    <body>
+        <div th:if="${param.error}">
+            <label style="color: red;">Invalid username or password.</label>
+        </div>
+        <div th:if="${param.logout}">
+            <label>You have been logged out.</label>
+            <p><a th:href="@{/}">go back to title.</a></p>
+        </div>
+        <form th:if="!${param.logout}" th:action="@{/login}" method="post">
+            <div><label> User Name : <input type="text" name="username"/> </label></div>
+            <div><label> Password: <input type="password" name="password"/> </label></div>
+            <div><input type="submit" value="Sign In"/></div>
+        </form>
+    </body>
+</html>

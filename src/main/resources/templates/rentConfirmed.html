@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Webflix</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <a th:href="@{'/movieDetails?id=' + ${idMovie}}"><button>back to movie</button></a>
+    <label th:if="${canRent}">The movie has been rented. Thank you.</label>
+    <label th:if="${!canRent}">The movie was not available. Try again later.</label>
+</body>
+</html>
