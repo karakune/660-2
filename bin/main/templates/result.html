@@ -9,8 +9,8 @@
 <body>
     <a th:href="@{/search}"><button>back to search</button></a>
     <h1 th:inline="text">Results</h1>
-    <label th:if="${movies.length} <= 0" style="color: red;">No results found.</label>
-    <ul th:if="${movies.length} > 0">
+    <label th:if="${movies.size()} <= 0" style="color: red;">No results found.</label>
+    <ul th:if="${movies.size()} > 0">
         <li th:each="movie: ${movies}"><a th:href="@{'/movieDetails?id=' + ${movie.id}}" th:text="${movie.title} + ' (' + ${movie.releaseYear} + ')'"></a></li>
     </ul>
 </body>

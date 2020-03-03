@@ -8,8 +8,8 @@
 
 <body>
     <a th:href="@{/result}"><button>back to results</button></a>
-    <a th:href="@{/rentConfirmed}"><button type="button">rent this movie</button></a>
-    <!--<label style="color: red;">Cannot rent movie, no copies available</label>-->
+    <a th:if="${copiesCount > 0}" th:href="@{'/rentConfirmed?idMovie=' + ${movie.id}}"><button type="button">rent this movie</button></a>
+    <label th:if="${copiesCount <= 0}" style="color: red;">Cannot rent movie, no copies available</label>
     <!--<label style="color: red;">Cannot rent movie, too many rented</label>-->
     <h1><p th:text="${movie.title}"></p></h1>
     <label th:text="'Year: ' + ${movie.releaseYear}"></label><br/>
@@ -25,7 +25,7 @@
             <li th:each="genre: ${movie.genres}" th:text="${genre}"></li>
         </ul>
     </div>
-    <label>Director: <a th:href="@{'/personDetails?idMovie=' + ${movie.id} + $'&idPerson=' + ${movie.director.id}}" th:text="${movie.director.firstName} + ' ' + ${movie.director.lastName}"></a></label><br/>
+    <label>Director: <a th:href="@{'/personDetails?idMovie=' + ${movie.id} + '&idPerson=' + ${movie.director.id}}" th:text="${movie.director.firstName} + ' ' + ${movie.director.lastName}"></a></label><br/>
     <div>
         <label>Actors:</label>
         <ul>

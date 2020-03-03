@@ -5,17 +5,13 @@ import com.A1.Webflix2.repositories.InventoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
-import com.A1.Webflix2.models.Inventory;
-
 @Service
 public class InventoryService {
 
     @Autowired
-    private InventoryRepository InventoryRepository;
+    private InventoryRepository inventoryRepository;
 
-    public List<Inventory> list() {
-        return InventoryRepository.findAll();
+    public int countByIdMovie(int idMovie) {
+        return (int)inventoryRepository.countByMovieId(idMovie);
     }
 }

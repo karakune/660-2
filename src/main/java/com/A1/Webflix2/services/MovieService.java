@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.A1.Webflix2.models.Movie;
 
@@ -13,9 +14,19 @@ import com.A1.Webflix2.models.Movie;
 public class MovieService {
 
     @Autowired
-    private MovieRepository MovieRepository;
+    private MovieRepository movieRepository;
 
-    public List<Movie> list() {
-        return MovieRepository.findAll();
+    // public List<Movie> list() {
+    //     return movieRepository.findAll();
+    // }
+
+    public List<Movie> findAllByTitleAndOriginalLanguage(String title, String originalLanguage) {
+        return movieRepository.findAllByTitleAndOriginalLanguage(title, originalLanguage);
+    }
+
+    public Movie findById(int id) {
+        Optional<Movie> optionalEntity =  movieRepository.findById(id);
+        Movie movieEntity = optionalEntity.get();
+        return movieEntity;
     }
 }
