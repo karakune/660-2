@@ -18,9 +18,9 @@ public class PersonDetailsController {
         model.addAttribute("idMovie", idMovie);
         if (idPerson == 20) {
             APerson person = new Actor();
-            person.firstName = "Jean-Claude";
-            person.lastName = "Van-Damme";
-            person.birthDate = new Date(199944000000L);
+            // person.firstName = "Jean-Claude";
+            // person.lastName = "Van-Damme";
+            // person.birthDate = new Date(199944000000L);
 
             model.addAttribute("person", person);
         }

@@ -17,34 +17,34 @@ public class MovieDetailsController {
         if (id == 5) {
             Movie movie = new Movie();
 
-            movie.id = 5;
-            movie.title = "Titenic";
-            movie.releaseYear = 1997;
-            movie.productionCountries = new String[] {"Canada", "USA"};
-            movie.originalLanguage = "English";
-            movie.genres = new String[] {"Drama", "Romance"};
+            // movie.id = 5;
+            // movie.title = "Titenic";
+            // movie.releaseYear = 1997;
+            // movie.productionCountries = new String[] {"Canada", "USA"};
+            // movie.originalLanguage = "English";
+            // movie.genres = new String[] {"Drama", "Romance"};
             
             Director d = new Director();
-            d.firstName = "Billie";
-            d.lastName = "Eilish";
-            movie.director = d;
+            // d.firstName = "Billie";
+            // d.lastName = "Eilish";
+            // movie.director = d;
 
             Actor actor1 = new Actor();
-            actor1.id = 20;
-            actor1.firstName = "Jean-Claude";
-            actor1.lastName = "Van-Damme";
-            actor1.character = "Twilight Sparkle";
+            // actor1.id = 20;
+            // actor1.firstName = "Jean-Claude";
+            // actor1.lastName = "Van-Damme";
+            // actor1.character = "Twilight Sparkle";
             Actor actor2 = new Actor();
-            actor2.id = 16;
-            actor2.firstName = "Arnold";
-            actor2.lastName = "Schwarzengger";
-            actor2.character = "The Boat";
+            // actor2.id = 16;
+            // actor2.firstName = "Arnold";
+            // actor2.lastName = "Schwarzengger";
+            // actor2.character = "The Boat";
 
-            movie.actors = new Actor[] {actor1, actor2};
-            movie.length = 420;
-            movie.summary = "a clustercluck";
-            movie.posterLink = "http://google.com";
-            movie.trailerLinks = new String[] {"http://yahoo.ca", "http://youtube.com"};
+            // movie.actors = new Actor[] {actor1, actor2};
+            // movie.length = 420;
+            // movie.summary = "a clustercluck";
+            // movie.posterLink = "http://google.com";
+            // movie.trailerLinks = new String[] {"http://yahoo.ca", "http://youtube.com"};
 
             model.addAttribute("movie", movie);
         }

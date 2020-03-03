@@ -2,14 +2,10 @@ package com.A1.Webflix2.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class ClientPackage {
-    @Id
-    @GeneratedValue
-    private int id;
 
     @Column(name = "name")
     private String packageName;
@@ -21,6 +17,7 @@ public class ClientPackage {
     @Column(nullable = true)
     private Integer maxDuration;
 
+    @Id
     private String code;
 
     public String getPackageName() {
