@@ -18,8 +18,8 @@ public class ClientController {
         return "login";
     }
 
-    @GetMapping({"/", "/welcome"})
-    public String welcome(Model model) {
-        return "welcome";
+    @GetMapping({"/", "/home"})
+    public String home(Model model) {
+        return "home";
     }
 }
