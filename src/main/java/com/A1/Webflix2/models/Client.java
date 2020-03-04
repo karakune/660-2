@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 // import org.springframework.context.annotation.Bean;
 
@@ -34,6 +35,9 @@ public class Client {
     private Date birthDate;
 
     private String password;
+
+    @Transient
+    private String passwordConfirm;
 
     @OneToMany
     private List<Location> locations;
